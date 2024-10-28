@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paso 3 - Contexto del Caso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hsl(218, 28%, 13%);
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+            border-radius: 18px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 7px;
+            border: 1px solid hsl(218, 28%, 13%);
+            border-radius: 10px;
+        }
+        .button-group {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Paso 3: Contexto del Caso</h2>
+    <form>
+        <div class="form-group">
+            <label for="tipo_abuso">Tipo de Abuso:</label>
+            <select id="tipo_abuso" name="tipo_abuso" required>
+                <option value="fisico">Físico</option>
+                <option value="emocional">Emocional</option>
+                <option value="sexual">Sexual</option>
+                <option value="negligencia">Negligencia</option>
+                <option value="otro">Otro</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="fecha_incidente">Fecha del Incidente:</label>
+            <input type="date" id="fecha_incidente" name="fecha_incidente" required>
+        </div>
+        <p>Dirección del incidente</p>
+        <div class="form-group">
+            <label for="calle">Calle:</label>
+            <input type="text" id="calle" name="calle">
+            <label for="manzana">Manzana:</label>
+            <input type="number" id="manzana" name="manzana">
+            <label for="lote">Lote:</label>
+            <input type="number" id="lote" name="lote">
+            <label for="calle">Municipio</label>
+            <input type="text" id="calle" name="calle">
+            <label for="calle">CP:</label>
+            <input type="number" id="calle" name="calle">
+            <label for="calle">Estado:</label>
+            <input type="text" id="calle" name="calle">
+        </div>
+        <div class="form-group">
+            <label for="descripcion_incidente">Descripción del Incidente:</label>
+            <textarea id="descripcion_incidente" name="descripcion_incidente" rows="4" required></textarea>
+        </div>
+        <div class="button-group">
+            <a href="Formato2.html"><button type="button">Atrás</button></a>
+            <a href="Formato4.html"><button type="button">Siguiente</button></a>
+        </div>
+    </form>
+</div>
+<script>
+    document.querySelector('a[href="Formato4.html"]').addEventListener('click', function() {
+        // Guardar los datos del caso en localStorage
+        localStorage.setItem('tipo_abuso', document.getElementById('tipo_abuso').value);
+        localStorage.setItem('fecha_incidente', document.getElementById('fecha_incidente').value);
+        localStorage.setItem('ubicacion_incidente', document.getElementById('ubicacion_incidente').value);
+        localStorage.setItem('descripcion_incidente', document.getElementById('descripcion_incidente').value);
+    });
+</script>
+
+</body>
+</html>
+
+

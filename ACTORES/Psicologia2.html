@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Evaluaciones Psicológicas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: hsl(218, 28%, 13%);
+        }
+
+        .evaluaciones-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        .formulario {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .formulario h2 {
+            margin-bottom: 10px;
+        }
+
+        .formulario label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .formulario input,
+        .formulario textarea,
+        .formulario select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .formulario button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #007cb57a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .formulario button:hover {
+            background-color: #007bb5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="evaluaciones-container">
+
+        <!-- Formulario de Evaluación Inicial -->
+        <div class="formulario">
+            <h2>Formulario de Evaluación Inicial</h2>
+            <form action="#" method="post">
+                <label for="nombre_nna">Nombre del NNA:</label>
+                <input type="text" id="nombre_nna" name="nombre_nna" required>
+                <label for="primer_apellido">Primer apellido del NNA:</label>
+                <input type="text" id="apellido_nna" name="primer_apellido">
+                <label for="segundo_apellido">Segundo apellido del NNA:</label>
+                <input type="text" id="apellido_nna" name="segundo_apellido">
+                <label for=""></label>
+                <label for="antecedentes">Antecedentes del NNA:</label>
+                <textarea id="antecedentes" name="antecedentes" rows="4"
+                    placeholder="Describa los antecedentes relevantes..."></textarea>
+
+                <label for="motivo-consulta">Motivo de la Consulta:</label>
+                <textarea id="motivo-consulta" name="motivo-consulta" rows="4"
+                    placeholder="Ingrese el motivo de la consulta..."></textarea>
+
+                <label for="observaciones">Observaciones Preliminares:</label>
+                <textarea id="observaciones" name="observaciones" rows="4"
+                    placeholder="Notas sobre observaciones preliminares..."></textarea>
+
+                <label for="objetivos">Objetivos de la Intervención:</label>
+                <textarea id="objetivos" name="objetivos" rows="4"
+                    placeholder="Establezca los objetivos de la intervención..."></textarea>
+
+                <button type="submit">Guardar Evaluación Inicial</button>
+            </form>
+        </div>
+
+        <!-- Formulario de Seguimiento y Evaluaciones Periódicas -->
+        <div class="formulario">
+            <h2>Seguimiento y Evaluaciones Periódicas</h2>
+            <form action="#" method="post">
+                <label for="fecha-sesion">Fecha de la Sesión:</label>
+                <input type="date" id="fecha-sesion" name="fecha-sesion">
+
+                <label for="progreso">Evaluación de Progreso:</label>
+                <textarea id="progreso" name="progreso" rows="4"
+                    placeholder="Describa el progreso observado..."></textarea>
+
+                <label for="comportamientos">Notas sobre Comportamientos Observados:</label>
+                <textarea id="comportamientos" name="comportamientos" rows="4"
+                    placeholder="Detalles sobre comportamientos observados..."></textarea>
+
+                <label for="cambios">Cambios en la Intervención:</label>
+                <textarea id="cambios" name="cambios" rows="4"
+                    placeholder="Documente cualquier cambio en la intervención..."></textarea>
+
+                <button type="submit">Guardar Evaluación de Seguimiento</button>
+            </form>
+        </div>
+
+        <!-- Formulario para Escalas y Cuestionarios -->
+        <div class="formulario">
+            <h2>Escalas y Cuestionarios</h2>
+            <form action="#" method="post">
+                <label for="tipo-escala">Tipo de Escala o Cuestionario:</label>
+                <select id="tipo-escala" name="tipo-escala">
+                    <option value="ansiedad">Escala de Ansiedad</option>
+                    <option value="depresion">Escala de Depresión</option>
+                    <option value="personalizado">Cuestionario Personalizado</option>
+                    <!-- Añadir más opciones según sea necesario -->
+                </select>
+
+                <label for="resultados">Resultados:</label>
+                <textarea id="resultados" name="resultados" rows="4"
+                    placeholder="Ingrese los resultados de la escala o cuestionario..."></textarea>
+
+                <button type="submit">Guardar Escala o Cuestionario</button>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

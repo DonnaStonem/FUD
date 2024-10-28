@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunicación y Colaboración</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: hsl(218, 28%, 13%);
+        }
+        .comunicacion-colaboracion-container {
+            background-color: #fff;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .formulario {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .formulario h2 {
+            margin-bottom: 10px;
+        }
+        .formulario label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .formulario input, .formulario textarea, .formulario select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .formulario button{
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #007cb57a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .formulario button:hover {
+            background-color: #007bb5;
+        }
+        .calendario-container {
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="comunicacion-colaboracion-container">
+        <!-- Mensajería Interna -->
+        <div class="formulario">
+            <h2>Mensajería Interna</h2>
+            <form action="#" method="post">
+                <label for="destinatario">Destinatario:</label>
+                <select id="destinatario" name="destinatario">
+                    <option value="trabajador-social">Trabajador Social</option>
+                    <option value="abogado">Abogado</option>
+                    <option value="psicologo">Psicólogo</option>
+                    <!-- Añadir más opciones según sea necesario -->
+                </select>
+
+                <label for="asunto">Asunto:</label>
+                <input type="text" id="asunto" name="asunto" placeholder="Ingrese el asunto del mensaje">
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escriba su mensaje aquí..."></textarea>
+
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </div>
+
+        <!-- Agendar Citas -->
+        <div class="calendario-container">
+            <h2>Agendar Citas</h2>
+            <form action="#" method="post">
+                <label for="fecha-cita">Fecha de la Cita:</label>
+                <input type="date" id="fecha-cita" name="fecha-cita">
+
+                <label for="hora-cita">Hora de la Cita:</label>
+                <input type="time" id="hora-cita" name="hora-cita">
+
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="4" placeholder="Descripción de la cita..."></textarea>
+
+                <label for="recordatorios">Recordatorios:</label>
+                <select id="recordatorios" name="recordatorios">
+                    <option value="1-dia">1 Día Antes</option>
+                    <option value="2-dias">2 Días Antes</option>
+                    <option value="1-semana">1 Semana Antes</option>
+                </select>
+
+                <label for="profesionales">Profesionales Involucrados:</label>
+                <select id="profesionales" name="profesionales" multiple>
+                    <option value="trabajador-social">Trabajador Social</option>
+                    <option value="abogado">Abogado</option>
+                    <option value="psicologo">Psicólogo</option>
+                    <!-- Añadir más opciones según sea necesario -->
+                </select>
+
+                <button type="submit">Guardar Cita</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

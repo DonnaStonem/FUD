@@ -1,0 +1,25 @@
+USE f_con_derechos;
+CREATE TABLE tutor_informacion (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_completo VARCHAR(255) NOT NULL,
+    sexo ENUM('hombre', 'mujer', 'otro') NOT NULL,
+    fecha_nacimiento DATE NOT NULL,
+    curp VARCHAR(18) NOT NULL,
+    rfc VARCHAR(13) NOT NULL,
+    nivel_estudios VARCHAR(100) NOT NULL,
+    situacion_economica VARCHAR(255),
+    idiomas VARCHAR(255),
+    identificaciones_oficiales VARCHAR(255),
+    domicilio VARCHAR(255) NOT NULL,
+    condiciones_domicilio TEXT,
+    datos_contacto VARCHAR(255),
+    es_migrante ENUM('si', 'no'),
+    es_refugiada ENUM('si', 'no'),
+    habla_espanol ENUM('si', 'no'),
+    tiene_discapacidad ENUM('si', 'no'),
+    es_aislado ENUM('si', 'no'),
+    fue_desplazada ENUM('si', 'no'),
+    pertenece_institucion ENUM('federal', 'estatal', 'sociedad_civil', 'religiosa', 'asistencia_privada', 'internacional', 'ninguna'),
+    parentesco_victima VARCHAR(255),
+    trabaja ENUM('si', 'no')
+);

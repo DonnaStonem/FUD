@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Solicitud</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #9fdcff;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-container {
+            background: #ffffff;
+            padding: 20px;
+            margin: auto;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+            border-radius: 18px;
+        }
+        .form-container h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 7px;
+            border: 1px solid #83bdff;
+            border-radius: 10px;
+        }
+        .form-group button {
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <form action="solicitud.php" method="POST">
+        <div class="form-container">
+            <h2>Datos del Caso
+            </h2>
+            
+            <!-- Lugar de Solicitud y Fecha -->
+            <div class="form-group">
+                <label for="lugar_solicitud">Lugar de solicitud:</label>
+                <input type="text" name="lugar_solicitud" id="lugar_solicitud" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha_solicitud">Fecha de solicitud:</label>
+                <input type="date" name="fecha_solicitud" id="fecha_solicitud" required>
+            </div>
+
+            <!-- Quien realiza la solicitud -->
+            <div class="form-group">
+                <label for="solicitante">¿Quién realiza la solicitud?</label>
+                <select name="solicitante" id="solicitante" required>
+                    <option value="victima_directa">Víctima directa</option>
+                    <option value="familiar">Víctima a través de familiar</option>
+                    <option value="servidor_publico">Servidor público</option>
+                    <option value="representante_legal">Representante legal</option>
+                </select>
+            </div>
+
+            <!-- Datos de la Persona que realiza la solicitud -->
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="primer_apellido">Primer apellido:</label>
+                <input type="text" name="primer_apellido" id="primer_apellido" required>
+            </div>
+            <div class="form-group">
+                <label for="segundo_apellido">Segundo apellido:</label>
+                <input type="text" name="segundo_apellido" id="segundo_apellido" required>
+            </div>
+            <div class="form-group">
+                <label for="parentesco">Parentesco con la víctima:</label>
+                <input type="text" name="parentesco" id="parentesco" required>
+            </div>
+
+            <!-- Contacto -->
+            <div class="form-group">
+                <label for="telefono_movil">Teléfono móvil:</label>
+                <input type="tel" name="telefono_movil" id="telefono_movil" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono_fijo">Teléfono fijo:</label>
+                <input type="tel" name="telefono_fijo" id="telefono_fijo">
+            </div>
+            <div class="form-group">
+                <label for="correo_electronico">Correo electrónico:</label>
+                <input type="email" name="correo_electronico" id="correo_electronico" required>
+            </div>
+            <div class="form-group">
+                <label for="otros_datos_contacto">Otros datos de contacto:</label>
+                <textarea name="otros_datos_contacto" id="otros_datos_contacto" rows="3"></textarea>
+            </div>
+
+            <!-- Dirección -->
+            <div class="form-group">
+                <label for="calle_hechos">Calle de los hechos:</label>
+                <input type="text" name="calle_hechos" id="calle_hechos" required>
+            </div>
+            <div class="form-group">
+                <label for="codigo_postal">Código postal:</label>
+                <input type="text" name="codigo_postal" id="codigo_postal" required>
+            </div>
+            <div class="form-group">
+                <label for="num_exterior">Número exterior:</label>
+                <input type="text" name="num_exterior" id="num_exterior">
+            </div>
+            <div class="form-group">
+                <label for="num_interior">Número interior:</label>
+                <input type="text" name="num_interior" id="num_interior">
+            </div>
+            <div class="form-group">
+                <label for="colonia">Colonia:</label>
+                <input type="text" name="colonia" id="colonia" required>
+            </div>
+            <div class="form-group">
+                <label for="localidad">Localidad:</label>
+                <input type="text" name="localidad" id="localidad">
+            </div>
+            <div class="form-group">
+                <label for="municipio">Delegación o municipio:</label>
+                <input type="text" name="municipio" id="municipio" required>
+            </div>
+            <div class="form-group">
+                <label for="entidad_federativa">Entidad federativa:</label>
+                <input type="text" name="entidad_federativa" id="entidad_federativa" required>
+            </div>
+
+            <!-- Relato de los hechos -->
+            <div class="form-group">
+                <label for="relato_hechos">Relato de los hechos:</label>
+                <textarea name="relato_hechos" id="relato_hechos" rows="5" required></textarea>
+            </div>
+
+            <!-- Otros datos -->
+            <div class="form-group">
+                <label for="datos_conocidos">Si se desconocen los datos anteriores, proporcione los que se conozcan:</label>
+                <textarea name="datos_conocidos" id="datos_conocidos" rows="4"></textarea>
+            </div>
+
+            <!-- Daño sufrido -->
+            <div class="form-group">
+                <label for="tipo_dano">Tipo de daño sufrido:</label>
+                <select name="tipo_dano" id="tipo_dano" required>
+                    <option value="fisico">Físico</option>
+                    <option value="psicologico">Psicológico</option>
+                    <option value="patrimonial">Patrimonial</option>
+                    <option value="sexual">Sexual</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+
+            <!-- Denuncia ante el Ministerio Público -->
+            <div class="form-group">
+                <label for="denuncia_mp">¿Denunció ante el Ministerio Público?</label>
+                <select name="denuncia_mp" id="denuncia_mp" required>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fecha_denuncia">Fecha de denuncia:</label>
+                <input type="date" name="fecha_denuncia" id="fecha_denuncia">
+            </div>
+            <div class="form-group">
+                <label for="competencia">Competencia:</label>
+                <select name="competencia" id="competencia">
+                    <option value="federal">Federal</option>
+                    <option value="local">Local</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="entidad_denuncia">Entidad federativa:</label>
+                <input type="text" name="entidad_denuncia" id="entidad_denuncia">
+            </div>
+            <div class="form-group">
+                <label for="delito">Delito:</label>
+                <input type="text" name="delito" id="delito">
+            </div>
+            <div class="form-group">
+                <label for="agencia_mp">Agencia MP:</label>
+                <input type="text" name="agencia_mp" id="agencia_mp">
+            </div>
+            <div class="form-group">
+                <label for="estado_investigacion">Estado de investigación:</label>
+                <input type="text" name="estado_investigacion" id="estado_investigacion">
+            </div>
+            <div class="form-group">
+                <label for="fecha_proceso">Fecha de inicio del proceso judicial:</label>
+                <input type="date" name="fecha_proceso" id="fecha_proceso">
+            </div>
+            <div class="form-group">
+                <label for="competencia_proceso">Competencia del proceso judicial:</label>
+                <select name="competencia_proceso" id="competencia_proceso">
+                    <option value="federal">Federal</option>
+                    <option value="local">Local</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="delito_proceso">Delito en proceso:</label>
+                <input type="text" name="delito_proceso" id="delito_proceso">
+            </div>
+            <div class="form-group">
+                <label for="num_juzgado">Número de juzgado:</label>
+                <input type="text" name="num_juzgado" id="num_juzgado">
+            </div>
+            <div class="form-group">
+                <label for="estado_proceso">Estado del proceso judicial:</label>
+                <input type="text" name="estado_proceso" id="estado_proceso">
+            </div>
+            <div class="form-group">
+                <label for="num_proceso">Número de proceso:</label>
+                <input type="text" name="num_proceso" id="num_proceso">
+            </div>
+
+            <!-- Queja o petición -->
+            <div class="form-group">
+                <label for="queja_peticion">¿Queja o petición?</label>
+                <input type="text" name="queja_peticion" id="queja_peticion">
+            </div>
+            <div class="form-group">
+                <label for="competencia_queja">Competencia:</label>
+                <select name="competencia_queja" id="competencia_queja">
+                    <option value="federal">Federal</option>
+                    <option value="local">Local</option>
+                    <option value="internacional">Internacional</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="violacion_ddhh">Violación a Derechos Humanos:</label>
+                <select name="violacion_ddhh" id="violacion_ddhh">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="autoridad_responsable">Autoridad responsable:</label>
+                <input type="text" name="autoridad_responsable" id="autoridad_responsable">
+            </div>
+
+            <!-- Tipo de resolución -->
+            <div class="form-group">
+                <label for="tipo_resolucion">Tipo de resolución:</label>
+                <select name="tipo_resolucion" id="tipo_resolucion">
+                    <option value="recomendacion">Recomendación</option>
+                    <option value="conciliacion">Conciliación</option>
+                    <option value="medidas_precautorias">Medidas precautorias</option>
+                    <option value="otra">Otra</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="folio">Folio:</label>
+                <input type="text" name="folio" id="folio">
+            </div>
+            <div class="form-group">
+                <label for="estado_actual">Estado actual:</label>
+                <input type="text" name="estado_actual" id="estado_actual">
+            </div>
+
+            <!-- Botón de Envío -->
+            <div class="form-group">
+                <button type="submit">Guardar y enviar</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Caso</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: hsl(218, 28%, 13%);
+            color: #333;
+        }
+
+        h1, h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #007bff;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sidebar {
+            background-color: hsl(219, 30%, 18%);
+            padding: 20px;
+            width: 20%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border: solid 1px #007bff;
+            border-radius: 10px;
+        }
+
+        /* Logo en la barra lateral */
+        .sidebar img.logo {
+            width: 120px; 
+            margin-bottom: 10px;
+        }
+
+        /* Título en la barra lateral */
+        .sidebar h1 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+
+        /* Estilos para la navegación */
+        .sidebar nav ul {
+            list-style: none; 
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            background-color: #007bb5;
+            color: white;
+            border-radius: 5px;
+            text-align: left;
+            text-decoration: none;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #1a9e8f; 
+            padding-left: 20px; 
+        }
+
+        /* Sección principal */
+        .content {
+            padding: 30px;
+            flex: 1;
+            background-color: hsl(218, 28%, 13%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .recuadro {
+            padding: 20px;
+            border: 1px solid #007bb5;
+            border-radius: 5px;
+            background-color: hsl(219, 30%, 18%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .recuadro h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #007bb5;
+        }
+
+        .recuadro ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .recuadro ul li {
+            margin: 10px 0;
+        }
+
+        .recuadro a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+        }
+
+        .recuadro a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>Nombre del NNA</h1>
+            <img src="logo.png" alt="Logo de La FUD" class="logo">
+            <h2>Formularios realizados previamente para el caso.</h2>
+            <nav>
+                <ul>
+                    <li><a href="Psicologia2.html">Gestión de Evaluaciones Psicológicas</a></li>
+                    <li><a href="Psicologia3.html">Historial Clínico</a></li>
+                    <li><a href="Psicologia4.html">Comunicación y Colaboración</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <div class="recuadro">
+                <h1>Registro de Caso</h1>
+                <ul>
+                    <li><a href="Psicologia2.html">Gestión de Evaluaciones Psicológicas</a></li>
+                    <li><p>- Formulario de Evaluación Inicial</p></li>
+                    <li><p>- Seguimiento y Evaluaciones Periódicas</p></li>
+                    <li><p>- Escalas y Cuestionarios</p></li>
+
+                    <li><a href="Psicologia3.html">Historial Clínico</a></li>
+                    <li><p>- Registro de Sesiones</p></li>
+                    <li><p>- Plan de Intervención</p></li>
+                    <li><p>- Documentación de Crisis</p></li>
+                    
+                    <li><a href="Psicologia4.html">Comunicación y Colaboración</a></li>
+                    <li><p>- Mensajería Interna</p></li>
+                    <li><p>- Agendar Citas</p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

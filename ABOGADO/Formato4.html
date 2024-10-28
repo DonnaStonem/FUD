@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paso 4 - Finalizar Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hsl(218, 28%, 13%);
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+            border-radius: 18px;
+        }
+        .button-group {
+            text-align: center;
+        }
+        .confirmation {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Finalizar Registro</h2>
+    <p class="confirmation">Revise toda la información antes de continuar.</p>
+    <p>Nombre del NNA: <span id="confirm_nombre_nna"></span></p>
+    <p>Género del NNA: <span id="confirm_genero_nna"></span></p>
+    <p>Fecha de Nacimiento: <span id="confirm_fecha_nacimiento"></span></p>
+    <p>Nacionalidad: <span id="confirm_nacionalidad_nna"></span></p>
+    <p>Dirección: <span id="confirm_direccion_nna"></span></p>
+    <p>Número de Documento: <span id="confirm_numero_documento"></span></p>
+    <p>Estado de Salud Actual: <span id="confirm_estado_salud"></span></p>
+    <p>Nombre del Tutor: <span id="confirm_nombre_tutor"></span></p>
+    <p>Parentesco con el NNA: <span id="confirm_parentesco_tutor"></span></p>
+    <p>Teléfono del Tutor: <span id="confirm_telefono_tutor"></span></p>
+    <p>Correo Electrónico: <span id="confirm_email_tutor"></span></p>
+    <p>Dirección del Tutor: <span id="confirm_direccion_tutor"></span></p>
+    <p>Tipo de Abuso: <span id="confirm_tipo_abuso"></span></p>
+    <p>Fecha del Incidente: <span id="confirm_fecha_incidente"></span></p>
+    <p>Ubicación del Incidente: <span id="confirm_ubicacion_incidente"></span></p>
+    <p>Descripción del Incidente: <span id="confirm_descripcion_incidente"></span></p>
+    
+    <div class="button-group">
+        <a href="Formato3.html"><button type="button">Atrás</button></a>
+        <button type="button" onclick="guardarDatos()">Guardar Datos</button>
+    </div>
+</div>
+
+<script>
+    // Mostrar los datos en la página desde localStorage
+    document.getElementById('confirm_nombre_nna').textContent = localStorage.getItem('nombre_nna');
+    document.getElementById('confirm_genero_nna').textContent = localStorage.getItem('genero_nna');
+    document.getElementById('confirm_fecha_nacimiento').textContent = localStorage.getItem('fecha_nacimiento');
+    document.getElementById('confirm_nacionalidad_nna').textContent = localStorage.getItem('nacionalidad_nna');
+    document.getElementById('confirm_direccion_nna').textContent = localStorage.getItem('direccion_nna');
+    document.getElementById('confirm_numero_documento').textContent = localStorage.getItem('numero_documento');
+    document.getElementById('confirm_estado_salud').textContent = localStorage.getItem('estado_salud');
+    document.getElementById('confirm_nombre_tutor').textContent = localStorage.getItem('nombre_tutor');
+    document.getElementById('confirm_parentesco_tutor').textContent = localStorage.getItem('parentesco_tutor');
+    document.getElementById('confirm_telefono_tutor').textContent = localStorage.getItem('telefono_tutor');
+    document.getElementById('confirm_email_tutor').textContent = localStorage.getItem('email_tutor');
+    document.getElementById('confirm_direccion_tutor').textContent = localStorage.getItem('direccion_tutor');
+    document.getElementById('confirm_tipo_abuso').textContent = localStorage.getItem('tipo_abuso');
+    document.getElementById('confirm_fecha_incidente').textContent = localStorage.getItem('fecha_incidente');
+    document.getElementById('confirm_ubicacion_incidente').textContent = localStorage.getItem('ubicacion_incidente');
+    document.getElementById('confirm_descripcion_incidente').textContent = localStorage.getItem('descripcion_incidente');
+
+    // Función para guardar los datos en el servidor
+    function guardarDatos() {
+        // Crear un objeto con los datos del localStorage
+        const datos = {
+            nombre_nna: localStorage.getItem('nombre_nna'),
+            genero_nna: localStorage.getItem('genero_nna'),
+            fecha_nacimiento: localStorage.getItem('fecha_nacimiento'),
+            nacionalidad_nna: localStorage.getItem('nacionalidad_nna'),
+            direccion_nna: localStorage.getItem('direccion_nna'),
+            numero_documento: localStorage.getItem('numero_documento'),
+            estado_salud: localStorage.getItem('estado_salud'),
+            nombre_tutor: localStorage.getItem('nombre_tutor'),
+            parentesco_tutor: localStorage.getItem('parentesco_tutor'),
+            telefono_tutor: localStorage.getItem('telefono_tutor'),
+            email_tutor: localStorage.getItem('email_tutor'),
+            direccion_tutor: localStorage.getItem('direccion_tutor'),
+            tipo_abuso: localStorage.getItem('tipo_abuso'),
+            fecha_incidente: localStorage.getItem('fecha_incidente'),
+            ubicacion_incidente: localStorage.getItem('ubicacion_incidente'),
+            descripcion_incidente: localStorage.getItem('descripcion_incidente')
+        };
+
+        // Enviar los datos al servidor usando fetch
+        fetch('guardar_datos_nna.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datos)
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert("Datos guardados con éxito.");
+            // Limpiar el localStorage después de guardar los datos
+            localStorage.clear();
+            // Redirigir a la página siguiente
+            window.location.href = "Formato1.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert("Hubo un error al guardar los datos.");
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento y Evaluaciones Periódicas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hsl(218, 28%, 13%);
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+            border: solid 1px #007bb5;
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 7px;
+            border: 1px solid #83bdff;
+            border-radius: 10px;
+        }
+        .button-group {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Seguimiento y Evaluaciones Periódicas</h2>
+    <form action="escalas.html" method="post">
+        <div class="form-group">
+            <label for="fecha-sesion">Fecha de la sesión:</label>
+            <input type="date" id="fecha-sesion" name="fecha-sesion">
+        </div>
+        <div class="form-group">
+            <label for="progreso">Evaluación de Progreso:</label>
+            <textarea id="progreso" name="progreso" rows="4" placeholder="Describa el progreso observado..."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="comportamientos">Notas sobre Comportamientos Observados:</label>
+            <textarea id="comportamientos" name="comportamientos" rows="4" placeholder="Detalles sobre comportamientos observados..."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="cambios">Cambios en la Intervención:</label>
+            <textarea id="cambios" name="cambios" rows="4" placeholder="Documente cualquier cambio en la intervención..."></textarea>
+        </div>
+        <div class="button-group">
+            <a href="Ps A3.html"><button type="button">Siguiente</button></a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

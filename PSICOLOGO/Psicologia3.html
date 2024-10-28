@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial Clínico</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: hsl(218, 28%, 13%);
+            color: #333;
+            margin: 0;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2a9d8f;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #fff;
+        }
+
+        /* Contenedor principal */
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        /* Barra lateral */
+        .sidebar {
+            background-color: hsl(219, 30%, 18%);
+            padding: 20px;
+            width: 20%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border: solid 1px #007bb5;
+            border-radius: 10px;
+        }
+
+        .sidebar img.logo {
+            width: 120px; 
+            margin-bottom: 10px;
+        }
+
+        .sidebar h1 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #2a9d8f;
+        }
+
+        .sidebar nav ul {
+            list-style: none; 
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            background-color: #007bb5; 
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: left;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #1a9e8f; 
+            padding-left: 20px; 
+        }
+
+        .sidebar nav ul li a::before {
+            content: '→'; 
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        /* Sección principal */
+        .content {
+            padding: 30px;
+            flex: 1;
+            background-color:  hsl(218, 28%, 13%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .formulario {
+            padding: 15px;
+            background-color: hsl(218, 28%, 13%);
+            border: solid 1px #007bb5;
+            color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .formulario h2 {
+            margin-bottom: 10px;
+        }
+
+        .formulario label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .formulario input, .formulario textarea, .formulario select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .formulario button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #007bb5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .formulario button:hover {
+            background-color: #1a9e8f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Barra lateral -->
+        <div class="sidebar">
+            <img class="logo" src="logo.png" alt="Logo">
+            <h1>Historial Clínico</h1>
+            <nav>
+                <ul>
+                    <li><a href="Inicio Psicologia.html">Inicio</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="content">
+            <div class="formulario">
+                <h2>Registro de Sesiones</h2>
+                <form action="#" method="post">
+                    <label for="fecha-sesion">Fecha de la Sesión:</label>
+                    <input type="date" id="fecha-sesion" name="fecha-sesion">
+
+                    <label for="duracion">Duración (minutos):</label>
+                    <input type="number" id="duracion" name="duracion" min="1" placeholder="Ej. 60">
+
+                    <label for="temas-tratados">Temas Tratados:</label>
+                    <textarea id="temas-tratados" name="temas-tratados" rows="4" placeholder="Describa los temas tratados durante la sesión..."></textarea>
+
+                    <label for="intervenciones">Intervenciones Realizadas:</label>
+                    <textarea id="intervenciones" name="intervenciones" rows="4" placeholder="Detalle cualquier intervención realizada..."></textarea>
+
+                    <button type="submit">Guardar Sesión</button>
+                </form>
+            </div>
+
+            <div class="formulario">
+                <h2>Plan de Intervención</h2>
+                <form action="#" method="post">
+                    <label for="objetivos-corto-plazo">Objetivos a Corto Plazo:</label>
+                    <textarea id="objetivos-corto-plazo" name="objetivos-corto-plazo" rows="4" placeholder="Describa los objetivos a corto plazo..."></textarea>
+
+                    <label for="objetivos-largo-plazo">Objetivos a Largo Plazo:</label>
+                    <textarea id="objetivos-largo-plazo" name="objetivos-largo-plazo" rows="4" placeholder="Describa los objetivos a largo plazo..."></textarea>
+
+                    <label for="estrategias-terapeuticas">Estrategias Terapéuticas:</label>
+                    <textarea id="estrategias-terapeuticas" name="estrategias-terapeuticas" rows="4" placeholder="Detalle las estrategias terapéuticas planificadas..."></textarea>
+
+                    <label for="recomendaciones">Recomendaciones:</label>
+                    <textarea id="recomendaciones" name="recomendaciones" rows="4" placeholder="Añada cualquier recomendación adicional..."></textarea>
+
+                    <button type="submit">Guardar Plan de Intervención</button>
+                </form>
+            </div>
+
+            <div class="formulario">
+                <h2>Documentación de Crisis</h2>
+                <form action="#" method="post">
+                    <label for="fecha-crisis">Fecha del Incidente:</label>
+                    <input type="date" id="fecha-crisis" name="fecha-crisis">
+
+                    <label for="detalles-incidente">Detalles del Incidente:</label>
+                    <textarea id="detalles-incidente" name="detalles-incidente" rows="4" placeholder="Describa los detalles del incidente de crisis..."></textarea>
+
+                    <label for="acciones-tomadas">Acciones Tomadas:</label>
+                    <textarea id="acciones-tomadas" name="acciones-tomadas" rows="4" placeholder="Documente las acciones tomadas durante la crisis..."></textarea>
+
+                    <button type="submit">Guardar Documentación de Crisis</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

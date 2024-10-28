@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación Inicial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hsl(218, 28%, 13%);
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+            border: solid 3px #007bb5;
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 7px;
+            border: 1px solid #83bdff;
+            border-radius: 10px;
+        }
+        .button-group {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Formulario de Evaluación Inicial</h2>
+    <form action="seguimiento.html" method="post">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="primer_apellido">Primer Apellido:</label>
+            <input type="text" id="primer_apellido" name="primer_apellido" required>
+        </div>
+        <div class="form-group">
+            <label for="segundo_apellido">Segundo Apellido:</label>
+            <input type="text" id="segundo_apellido" name="segundo_apellido">
+        </div>
+        <div class="form-group">
+            <label for="antecedentes">Antecedentes del NNA:</label>
+            <textarea id="antecedentes" name="antecedentes" rows="4" placeholder="Describa los antecedentes relevantes..."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="motivo-consulta">Motivo de la Consulta:</label>
+            <textarea id="motivo-consulta" name="motivo-consulta" rows="4" placeholder="Ingrese el motivo de la consulta..."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="observaciones">Observaciones Preliminares:</label>
+            <textarea id="observaciones" name="observaciones" rows="4" placeholder="Notas sobre observaciones preliminares..."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="objetivos">Objetivos de la Intervención:</label>
+            <textarea id="objetivos" name="objetivos" rows="4" placeholder="Establezca los objetivos de la intervención..."></textarea>
+        </div>
+        <div class="button-group">
+            <a href="Ps A2.html"><button type="button">Siguiente</button></a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

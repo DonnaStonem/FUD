@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunicación y Colaboración</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: hsl(218, 28%, 13%);
+            color: #fff;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2a9d8f;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #fff;
+        }
+
+        /* Contenedor principal */
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        /* Barra lateral */
+        .sidebar {
+            background-color: hsl(219, 30%, 18%);
+            padding: 20px;
+            width: 20%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border: solid 1px #007bb5;
+            border-radius: 10px;    
+        }
+
+        .sidebar img.logo {
+            width: 120px; 
+            margin-bottom: 10px;
+        }
+
+        .sidebar h1 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #007bb5;
+        }
+
+        .sidebar nav ul {
+            list-style: none; 
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            background-color: #007bb5; 
+            color: white;
+            border-radius: 5px;
+            text-align: left;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #1a9e8f; 
+            padding-left: 20px; 
+        }
+
+        .sidebar nav ul li a::before {
+            content: '→'; 
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        /* Sección principal */
+        .content {
+            padding: 30px;
+            flex: 1;
+            background-color: hsl(218, 28%, 13%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .formulario, .calendario-container {
+            padding: 15px;
+            background-color: hsl(218, 28%, 13%);
+            border: solid 1px #007bb5;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .formulario h2, .calendario-container h2 {
+            margin-bottom: 10px;
+        }
+
+        .formulario label, .calendario-container label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .formulario input, .formulario textarea, .formulario select,
+        .calendario-container input, .calendario-container textarea, .calendario-container select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .formulario button, .calendario-container button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #007bb5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .formulario button:hover, .calendario-container button:hover {
+            background-color: #0496da;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Barra lateral -->
+        <div class="sidebar">
+            <img class="logo" src="logo.png" alt="Logo">
+            <h1>Comunicación</h1>
+            <nav>
+                <ul>
+                    <li><a href="Inicio Psicologia.html">Inicio</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="content">
+            <!-- Mensajería Interna -->
+            <div class="formulario">
+                <h2>Mensajería Interna</h2>
+                <form action="#" method="post">
+                    <label for="destinatario">Destinatario:</label>
+                    <select id="destinatario" name="destinatario">
+                        <option value="trabajador-social">Trabajador Social</option>
+                        <option value="abogado">Abogado</option>
+                        <option value="psicologo">Psicólogo</option>
+                        <!-- Añadir más opciones según sea necesario -->
+                    </select>
+
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto" placeholder="Ingrese el asunto del mensaje">
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escriba su mensaje aquí..."></textarea>
+
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
+
+            <!-- Agendar Citas -->
+            <div class="calendario-container">
+                <h2>Agendar Citas</h2>
+                <form action="#" method="post">
+                    <label for="fecha-cita">Fecha de la Cita:</label>
+                    <input type="date" id="fecha-cita" name="fecha-cita">
+
+                    <label for="hora-cita">Hora de la Cita:</label>
+                    <input type="time" id="hora-cita" name="hora-cita">
+
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" rows="4" placeholder="Descripción de la cita..."></textarea>
+
+                    <label for="recordatorios">Recordatorios:</label>
+                    <select id="recordatorios" name="recordatorios">
+                        <option value="1-dia">1 Día Antes</option>
+                        <option value="2-dias">2 Días Antes</option>
+                        <option value="1-semana">1 Semana Antes</option>
+                    </select>
+
+                    <label for="profesionales">Profesionales Involucrados:</label>
+                    <select id="profesionales" name="profesionales" multiple>
+                        <option value="trabajador-social">Trabajador Social</option>
+                        <option value="abogado">Abogado</option>
+                        <option value="psicologo">Psicólogo</option>
+                        <!-- Añadir más opciones según sea necesario -->
+                    </select>
+
+                    <button type="submit">Guardar Cita</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escalas y Cuestionarios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hsl(218, 28%, 13%);
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+            border: solid 2px #007bb5;
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 7px;
+            border: 1px solid #83bdff;
+            border-radius: 10px;
+        }
+        .button-group {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Escalas y Cuestionarios</h2>
+    <form action="#" method="post">
+        <div class="form-group">
+            <label for="tipo-escala">Tipo de Escala o Cuestionario:</label>
+            <select id="tipo-escala" name="tipo-escala">
+                <option value="ansiedad">Escala de Ansiedad</option>
+                <option value="depresion">Escala de Depresión</option>
+                <option value="personalizado">Cuestionario Personalizado</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="resultados">Resultados:</label>
+            <textarea id="resultados" name="resultados" rows="4" placeholder="Ingrese los resultados de la escala o cuestionario..."></textarea>
+        </div>
+        <div class="button-group">
+            <a href="Página de Registro de Caso Psicologia.html"><button type="button">Siguiente</button></a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

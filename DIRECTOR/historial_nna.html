@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial del NNA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #9fdcff;
+            padding: 20px;
+        }
+        .historial-container {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+            border-radius: 18px;
+        }
+        .form-title {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="historial-container">
+    <h2>Historial de: <span id="nombre_nna"></span></h2>
+
+    <h4>Formularios Completados:</h4>
+    
+    <!-- Información del formulario de Psicología -->
+    <div class="form-title">Formulario de Psicología</div>
+    <div class="form-details" id="psicologia-details"></div>
+
+    <!-- Información del formulario FUD -->
+    <div class="form-title">Formulario FUD</div>
+    <div class="form-details" id="fud-details"></div>
+
+</div>
+
+<script>
+    // Obtener el ID del NNA de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const nnaId = urlParams.get('nnaId');
+
+    // Simulación de datos de NNA (podría venir de una base de datos)
+    const nnaRegistrados = {
+        1: { nombre: 'Juan Pérez', psicologia: true, fud: false },
+        2: { nombre: 'Ana Gómez', psicologia: false, fud: true },
+        3: { nombre: 'Carlos Sánchez', psicologia: true, fud: true }
+    };
+
+    const nna = nnaRegistrados[nnaId];
+
+    // Mostrar el nombre del NNA
+    document.getElementById('nombre_nna').textContent = nna.nombre;
+
+    // Verificar y mostrar si el formulario de Psicología está completo
+    const psicologiaDetails = document.getElementById('psicologia-details');
+    if (nna.psicologia) {
+        psicologiaDetails.innerHTML = `<p>Formulario de Psicología completado.</p>`;
+    } else {
+        psicologiaDetails.innerHTML = `<p>El formulario de Psicología no ha sido completado.</p>`;
+    }
+
+    // Verificar y mostrar si el formulario FUD está completo
+    const fudDetails = document.getElementById('fud-details');
+    if (nna.fud) {
+        fudDetails.innerHTML = `<p>Formulario FUD completado.</p>`;
+    } else {
+        fudDetails.innerHTML = `<p>El formulario FUD no ha sido completado.</p>`;
+    }
+</script>
+
+</body>
+</html>

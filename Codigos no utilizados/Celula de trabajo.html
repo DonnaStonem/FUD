@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Células de Trabajo</title>
+    <style>
+        .celula {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .empleado {
+            margin-left: 20px;
+        }
+        .director-view, .capital-humano-view {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Visualización de Células de Trabajo</h1>
+    
+    <label for="role">Selecciona tu rol:</label>
+    <select id="role">
+        <option value="">Selecciona un rol</option>
+        <option value="psicologo">Psicólogo</option>
+        <option value="trabajador-social">Trabajador Social</option>
+        <option value="abogado">Abogado</option>
+        <option value="capital-humano">Capital Humano</option>
+        <option value="medico">Médico</option>
+        <option value="director">Director</option>
+    </select>
+    
+    <div id="workCells">
+        <!-- Vista para el Director o Capital Humano -->
+        <div class="director-view capital-humano-view">
+            <div class="celula">
+                <h3>Célula de Trabajo 1</h3>
+                <p><strong>Empleados:</strong></p>
+                <div class="empleado">Empleado 1</div>
+                <div class="empleado">Empleado 2</div>
+                <div class="empleado">Empleado 3</div>
+            </div>
+            <div class="celula">
+                <h3>Célula de Trabajo 2</h3>
+                <p><strong>Empleados:</strong></p>
+                <div class="empleado">Empleado 4</div>
+                <div class="empleado">Empleado 5</div>
+            </div>
+        </div>
+
+        <!-- Vista para otros roles -->
+        <div class="celula" id="userCell" style="display: none;">
+            <h3>Mi Célula de Trabajo</h3>
+            <p><strong>Empleados:</strong></p>
+            <div class="empleado">Empleado A</div>
+            <div class="empleado">Empleado B</div>
+        </div>
+    </div>
+
+    <script>
+        const roleSelect = document.getElementById('role');
+        const userCell = document.getElementById('userCell');
+        const directorView = document.querySelector('.director-view');
+        const capitalHumanoView = document.querySelector('.capital-humano-view');
+
+        roleSelect.addEventListener('change', function () {
+            const role = roleSelect.value;
+
+            // Ocultar todas las vistas
+            userCell.style.display = 'none';
+            directorView.style.display = 'none';
+            capitalHumanoView.style.display = 'none';
+
+            if (role === 'director' || role === 'capital-humano') {
+                // Si el rol es Director o Capital Humano, mostrar todas las células de trabajo
+                directorView.style.display = 'block';
+                capitalHumanoView.style.display = 'block';
+            } else if (role) {
+                // Para cualquier otro rol, mostrar solo su propia célula
+                userCell.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

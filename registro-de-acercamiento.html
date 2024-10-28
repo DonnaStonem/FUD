@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hsl(218, 28%, 13%);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: #ffffff;
+            border: solid 3px #007bb5;
+            border-radius: 10px;
+            padding: 20px;
+            margin: auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+            border-radius: 18px;
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 7px;
+            border: 1px solid #83bdff;
+            border-radius: 10px;
+        }
+
+        .form-group button {
+            background: #007bb5;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            width: 150px;
+            /* Ancho fijo de la celda */
+            height: 50px;
+            /* Alto fijo de la celda */
+            overflow: hidden;
+            /* Evita que el contenido desborde la celda */
+            white-space: nowrap;
+            /* Evita que el texto se divida en varias líneas */
+            text-overflow: ellipsis;
+            /* Agrega "..." si el texto es muy largo */
+        }
+
+        th {
+            background-color: #007bb5;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="registro.php" method="POST">
+        <div class="form-container">
+            <h2>Formato de registro del acercamiento con la familia para obtener información sobre la situación de
+                derechos de niñas, niños y adolescentes</h2>
+            <p>La información mínima a registrar en el formato de entrevista con la familia es:</p>
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" name="fecha" id="fecha" required>
+            </div>
+            <div class="form-group">
+                <label for="num_reporte">Nº de reporte:</label>
+                <input type="number" name="num_reporte" id="num_reporte" required>
+            </div>
+            <div class="form-group">
+                <label for="ciudad">Ciudad, localidad o municipio:</label>
+                <input type="text" name="ciudad" id="ciudad" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre_caso">Nombre del caso:</label>
+                <input type="text" name="nombre_caso" id="nombre_caso" required>
+            </div>
+            <div class="form-group">
+                <label for="miembro_proteccion">Nombre del NNA:</label>
+                <input type="text" name="miembro_proteccion" id="miembro_proteccion">
+            </div>
+            <div class="form-group">
+                <label for="miembro_proteccion">Primer apellido del NNA:</label>
+                <input type="text" name="miembro_proteccion" id="miembro_proteccion">
+            </div>
+            <div class="form-group">
+                <label for="miembro_proteccion">Segundo apellido del NNA:</label>
+                <input type="text" name="miembro_proteccion" id="miembro_proteccion">
+            </div>
+            <div class="form-group">
+                <label for="age">Edad del NNA:</label>
+                <input type="number" name="age" id="age">
+            </div>
+            <div class="form-group">
+                <label for="narracion">Información aportada por la familia sobre la situación de la NNA:</label>
+                <textarea name="narracion" id="narracion" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="narracion">Información aportada por la familia sobre redes familiares y
+                    comunitarias:</label>
+                <textarea name="narracion" id="narracion" rows="5"></textarea>
+            </div>
+            <h3>Si la familia no ha aportado información sobre estos puntos, será útil sondear algunas temáticas
+                útiles para comprender mejor los vínculos de la familia, como son: </h3>
+            <table>
+                <tr>
+                    <td>Sistema de residencia familiar patrilocal<br>
+                        (vive la madre de familia o no con<br>
+                        la familia del padre/esposo):<br></td>
+                    <td><input type="text" name="ciudad" id="ciudad" required></td>
+                </tr>
+                <tr>
+                    <td>Sostén principal en términos económicos:</td>
+                    <td><input type="text" name="ciudad" id="ciudad" required></td>
+                </tr>
+                <tr>
+                    <td>Relación de la madre de familia<br>
+                        con su familia <br>
+                        de origen y familia política:</td>
+                    <td><input type="text" name="ciudad" id="ciudad" required></td>
+                </tr>
+                <tr>
+                    <td>Patrón de migración. <br>
+                        Miembros ausentes por migración.<br>
+                        Familia migrante, sin <br>
+                        lazos en el actual lugar de<br>
+                        residencia. </td>
+                    <td><input type="text" name="ciudad" id="ciudad" required></td>
+                </tr>
+                <tr>
+                    <td>Sistema de compadrazgo <br>
+                        y vínculos interfamiliares</td>
+                    <td><input type="text" name="ciudad" id="ciudad" required></td>
+                </tr>
+                <tr>
+                    <td>Espacios de socialización <br>
+                        frecuentados por la familia<br>
+                        (grupos de danza, banda de <br>
+                        música, deportes, catequesis, <br>
+                        etc.)</td>
+                    <td><input type="text" name="ciudad" id="ciudad" required></td>
+                </tr>
+                <tr>
+                    <td>Otras formas de participación <br>
+                        de los integrantes de la <br>
+                        familia en la vida de la<br>
+                        ciudad, localidad,<br>
+                        municipio o comunidad</td>
+                    <td><input type="text" name="ciudad" id="ciudad" required></td>
+                </tr>
+                <tr>
+                    <td>Alcoholismo u otras <br>
+                        enfermedades crónicas <br>
+                        en la familia (que <br>
+                        implican patrones de <br>
+                        cuidado que recaen en <br>
+                        uno de los miembros</td>
+                    <td><input type="text" name="ciudad" id="ciudad" required></td>
+                </tr>
+                <tr>
+                    <td>En comunidades pequeñas, <br>
+                        rurales o indígenas se <br>
+                        tendrá en cuenta además: <br>
+
+                        • Nivel y tipo de bilingüismo <br>
+                        del niño, niño o adolescente <br>
+                        y de la familia.<br>
+                        • Qué integrantes de la familia<br>
+                        participan en las asambleas de <br>la
+                        comunidad.<br>
+
+                        • Qué relación de parentesco <br>
+                        tiene la familia con las <br>
+                        autoridades.<br>
+                        • Qué cargos han desempeñado<br> o
+                        están desempeñando en la <br>
+                        comunidad (prestigio social y <br>
+                        participación en la vida <br>
+                        comunitaria)
+                    </td>
+                    <td><input type="text" name="ciudad" id="ciudad" required></td>
+                </tr>
+            </table>
+            <h4> Información aportada por la familia durante el diálogo experimental (qué
+                manifiestan necesitar para proteger mejor a la NNA):</h4>
+            <p>Información específica sobre la situación de derechos de NNA:
+                (sólo se formulan preguntas sobre los temas que la familia no haya tocado en la entrevista)</p>
+            <style>
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin: 20px 0;
+                    font-family: Arial, sans-serif;
+                }
+
+                th,
+                td {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: center;
+                }
+
+                th {
+                    background-color: #4CAF50;
+                    color: white;
+                }
+
+                td {
+                    text-align: left;
+                }
+            </style>
+            <table>
+                <tr>
+                    <th>Elementos</th>
+                    <th>Si</th>
+                    <th>No</th>
+                    <th>No Aplica</th>
+                </tr>
+                <tr>
+                    <td>¿Esta registrado <br>
+                        en el registro civil?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿tiene acta <br>
+                        de nacimiento?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Hay algún hijo o hija <br>
+                        que no viva con la familia?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿La opinión de la NNA <br>
+                        es considerada y tomada<br>
+                        en cuenta?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Alguien lo cuida la<br>
+                        mayor parte del tiempo?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Ha visto peleas o cualquier otro tipo de violencia?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Ha recibido golpes o insultos?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Qué come normalmente? <br>
+                        (-alimentación adecuada-)</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Cuándo fue la última vez que lo llevaron al doctor?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Tienen cartilla de vacunación?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Está completa?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Ha estado enfermo?<br>
+                        ¿De qué?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Recibió asistencia médica?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Tiene servicio médico de seguro social<br>
+                        o seguro popular?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Alguno de sus hijos o hijas tiene <br>
+                        alguna discapacidad?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Si requiere aditamentos <br>
+                        (silla de ruedas, muleta,<br>
+                        etc.) <br>
+                        ¿cuenta con ellos? </td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Va a la escuela?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Cómo van sus calificaciones? </td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Cuál es su clase favorita?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Cuál es la clase que más le cuesta?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿A qué hora se duerme? </td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿A qué hora se levanta?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿De qué hora a qué hora juega?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿A qué juega?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Se junta con amigos a <br>
+                        jugar o platicar?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>¿Hace algún deporte?</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </table>
+            <div class="form-group">
+                <label for="narracion">Observaciones sobre grado de negación de las personas adultas a cargo de la
+                    NNA:</label>
+                <textarea name="narracion" id="narracion" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="narracion">Observaciones sobre grado de afectación emocional y/o física de las personas
+                    adultas a cargo de la NNA: </label>
+                <textarea name="narracion" id="narracion" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="narracion">Familiograma (cuando se haya decidido utilizarlo)
+                    y/o descripción de quiénes conviven, quiénes se encargan del cuidado de la NNA la
+                    mayor parte del tiempo, ocupaciones, etc</label>
+                <textarea name="narracion" id="narracion" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="narracion">Narración general de los hechos:</label>
+                <textarea name="narracion" id="narracion" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="narracion">Fecha acordada con la familia para presentarles el plan de restitución de
+                    derechos
+                    (próxima visita):</label>
+                <textarea name="narracion" id="narracion" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="narracion">Nombre/s de quien/es elabora/n el documento:</label>
+                <textarea name="narracion" id="narracion" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="narracion">Firma/s de quien/es elaboran el documento:</label>
+                <textarea name="narracion" id="narracion" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="narracion">Otros datos u observaciones relevantes:</label>
+                <textarea name="narracion" id="narracion" rows="5"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Guardar e ir al Inicio </button>
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>

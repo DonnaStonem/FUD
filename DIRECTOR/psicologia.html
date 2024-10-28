@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Psicología</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #9fdcff;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+            border-radius: 18px;
+        }
+        .button-group {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Formulario de Psicología</h2>
+    <p>Por favor, llena los siguientes datos:</p>
+    
+    <label for="fecha_psicologia">Fecha de la Evaluación:</label><br>
+    <input type="date" id="fecha_psicologia" required><br><br>
+
+    <label for="resultado_psicologia">Resultados:</label><br>
+    <textarea id="resultado_psicologia" rows="4" required></textarea><br><br>
+
+    <div class="button-group">
+        <button type="button" onclick="guardarPsicologia()">Guardar Datos</button>
+    </div>
+</div>
+
+<script>
+    // Función para guardar los datos del formulario de psicología
+    function guardarPsicologia() {
+        const datosPsicologia = {
+            fecha: document.getElementById('fecha_psicologia').value,
+            resultado: document.getElementById('resultado_psicologia').value
+        };
+
+        if (datosPsicologia.fecha && datosPsicologia.resultado) {
+            localStorage.setItem('psicologia', JSON.stringify(datosPsicologia));
+            alert('Datos de Psicología guardados con éxito.');
+            window.location.href = "historial_nna.html"; // Redirigir al historial
+        } else {
+            alert('Por favor, completa todos los campos.');
+        }
+    }
+</script>
+
+</body>
+</html>

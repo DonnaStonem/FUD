@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: hsl(218, 28%, 13%);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .recuadro {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .recuadro h1 {
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: #333;
+        }
+        .recuadro ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .recuadro ul li {
+            margin: 10px 0;
+        }
+        .recuadro button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .recuadro button:hover {
+            background-color: #0056b3;
+        }
+        .general-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .general-actions button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #007cb57a;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .general-actions button:hover {
+            background-color: #007bb5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Recuadro con el nombre del NNA y botones -->
+        <div class="recuadro">
+            <h1>Nombre del NNA</h1>
+            <ul>
+                <li><button onclick="window.location.href='Página de Registro de Caso Psicologia.html';">Historial</button></li>
+            </ul>
+        </div>
+
+        <!-- Botón para registrar un nuevo NNA -->
+        <div class="general-actions">
+            <button onclick="window.location.href='registro-nna.html';">Registrar Nuevo NNA</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Empleado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fb;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            color: #2a9d8f;
+        }
+        .form-container {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #1a646d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d85742;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registro de Empleado</h1>
+    
+    <div class="container">
+        <h2>Dar de Alta a un Empleado</h2>
+        <div class="form-container">
+            <form id="registroEmpleadoForm">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="curp">CURP:</label>
+                <input type="text" id="curp" name="curp" required>
+
+                <label for="rfc">RFC:</label>
+                <input type="text" id="rfc" name="rfc" required>
+
+                <label for="sexo">Sexo:</label>
+                <select id="sexo" name="sexo" required>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="fotoPerfil">Foto de Perfil:</label>
+                <input type="file" id="fotoPerfil" name="fotoPerfil" accept="image/*" required>
+
+                <label for="rol">Rol:</label>
+                <select id="rol" name="rol" required>
+                    <option value="psicologo">Psicólogo</option>
+                    <option value="trabajador-social">Trabajador Social</option>
+                    <option value="abogado">Abogado</option>
+                    <option value="capital-humano">Capital Humano</option>
+                    <option value="medico">Médico</option>
+                    <option value="director">Director</option>
+                </select>
+
+                <label for="cedula">Cédula Profesional:</label>
+                <input type="text" id="cedula" name="cedula" required>
+
+                <label for="gradoEstudios">Grado Máximo de Estudios:</label>
+                <select id="gradoEstudios" name="gradoEstudios" required>
+                    <option value="preparatoria">Preparatoria</option>
+                    <option value="licenciatura">Licenciatura</option>
+                    <option value="maestria">Maestría</option>
+                    <option value="doctorado">Doctorado</option>
+                </select>
+
+                <label for="titulo">Título Obtenido:</label>
+                <input type="text" id="titulo" name="titulo" required>
+
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" readonly>
+
+                <label for="contrasena">Contraseña:</label>
+                <input type="text" id="contrasena" name="contrasena" readonly>
+
+                <button type="submit">Dar de Alta</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Generar usuario y contraseña automáticamente
+        document.getElementById('registroEmpleadoForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar el envío del formulario
+
+            // Obtener datos del formulario
+            const nombre = document.getElementById('nombre').value;
+
+            // Generar usuario y contraseña
+            const usuario = generateUsername(nombre);
+            const contrasena = generatePassword();
+
+            // Mostrar usuario y contraseña
+            document.getElementById('usuario').value = usuario;
+            document.getElementById('contrasena').value = contrasena;
+
+            // Aquí deberías incluir la lógica para guardar el nuevo empleado
+            // Por ejemplo, enviarlo a un servidor mediante AJAX (no incluido aquí)
+
+            // Limpiar el formulario (opcional, si quieres que se mantengan los datos)
+            // this.reset();
+        });
+
+        // Función para generar un nombre de usuario
+        function generateUsername(nombre) {
+            // Crear un nombre de usuario simple combinando el nombre y un número aleatorio
+            return nombre.replace(/\s+/g, '').toLowerCase() + Math.floor(Math.random() * 100);
+        }
+
+        // Función para generar una contraseña aleatoria
+        function generatePassword() {
+            const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()';
+            let password = '';
+            for (let i = 0; i < 8; i++) {
+                const randomIndex = Math.floor(Math.random() * chars.length);
+                password += chars[randomIndex];
+            }
+            return password;
+        }
+    </script>
+</body>
+</html>

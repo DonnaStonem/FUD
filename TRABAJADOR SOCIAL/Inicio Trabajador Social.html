@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRABAJADOR SOCIAL</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: hsl(218, 28%, 13%);
+            color: #333;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #007bb5;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            background-color: hsl(219, 30%, 18%);;
+            padding: 20px;
+            width: 20%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border: solid 1px #007bb5;
+            border-radius: 10px;
+        }
+
+        .sidebar img.logo {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar h1 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #007bb5;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar nav ul li a {
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+            background-color: #007bb5;
+            color: white;
+            border-radius: 5px;
+            text-align: left;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #018fd1;
+            padding-left: 20px;
+        }
+
+        /* Sección principal */
+        .content {
+            padding: 30px;
+            flex: 1;
+            background-color: hsl(218, 28%, 13%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero {
+            background-color: hsl(219, 30%, 18%);
+            color: white;
+            padding: 40px;
+            border: solid 1px #007bb5;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #fff;
+        }
+
+        .about {
+            background-color: hsl(219, 30%, 18%);
+            color: #555555;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .about h3 {
+            margin-bottom: 15px;
+        }
+
+        /* Recuadro de información adicional */
+        .recuadro {
+            background-color: #e9ecef;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            max-width: 600px;
+        }
+
+        .titulo {
+            font-weight: bold;
+            color: #93a7af;
+        }
+
+        .recuadro p {
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .profile-picture {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            width: 70px;
+            height: 70px;
+            border-radius: 70%;
+            border: 6px solid #2a9d8f;
+        }
+
+        /* Estilos del formulario */
+        label {
+            color: white;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        select, input[type="text"] {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007cb57a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #007bb5;
+        }
+
+        /* Para ocultar y mostrar formularios */
+        .hidden {
+            display: none;
+        }
+
+        /* Estilo de los vínculos para subir expediente */
+        .expediente-link {
+            display: block;
+            margin: 10px 0;
+            color: #1a9e8f;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .expediente-link:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+
+    <script>
+        // Función para mostrar u ocultar formularios al hacer clic
+        function toggleForm(id) {
+            var form = document.getElementById(id);
+            if (form.classList.contains('hidden')) {
+                form.classList.remove('hidden');
+            } else {
+                form.classList.add('hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="logo.png" alt="Logo de La FUD" class="logo">
+            <h1>Subir y Visualizar Expedientes</h1>
+            <nav>
+                <ul>
+                    <li><a href="cedulausuarios.html">Consulta aquí tu celula Profesional</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section class="hero">
+                <h2>Trabajador Social</h2>
+                <p>"FPRD de NNA Fundación para la Protección y restitución de derechos de niñas, niños y adolescentes"</p>
+            </section>
+
+            <section class="about">
+                <h3>Gestionar Expedientes</h3>
+                <div class="recuadro">
+                    <p class="titulo">Seleccione una acción:</p>
+
+                    <!-- Desplegar opciones -->
+                    <button onclick="toggleForm('formulario-expediente')">Visualizar Expedientes</button>
+                    <button onclick="toggleForm('formulario-agregar')">Agregar Expediente</button>
+                </div>
+
+                <!-- Formulario para visualizar expedientes -->
+                <div id="formulario-expediente" class="hidden">
+                    <h4>Visualizar Expediente</h4>
+                    <label for="expedientes">Selecciona un expediente:</label>
+                    <select id="expedientes">
+                        <option value="expediente1">Expediente 1</option>
+                        <option value="expediente2">Expediente 2</option>
+                        <!-- Aquí se insertarán más expedientes desde la base de datos -->
+                    </select>
+                </div>
+
+                <!-- Vinculos para agregar expediente -->
+                <div id="formulario-agregar" class="hidden">
+                    <h4>Agregar Expediente</h4>
+                    <a class="expediente-link" href="registro-NNA.html">Datos del menor</a>
+                    <a class="expediente-link" href="registro-de-acercamiento.html">Datos del tutor/cuidador</a>
+                    <a class="expediente-link" href="diagnostico.html">Diagnosticos Iniciales</a>
+                </div>
+            </section>
+        </main>
+
+        <img src="perfil.png" alt="Foto de perfil" class="profile-picture">
+    </div>
+</body>
+</html>
+

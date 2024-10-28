@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paso 1 - Datos del NNA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hsl(218, 28%, 13%);
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+            border-radius: 18px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 7px;
+            border: 1px solid hsl(218, 28%, 13%);
+            border-radius: 10px;
+        }
+        .button-group {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Paso 1: Datos del NNA</h2>
+    <form>
+        <div class="form-group">
+            <label for="nombre_nna">Nombre del NNA:</label>
+            <input type="text" id="nombre_nna" name="nombre_nna" required>
+            <label for="primer_apellido">Primer apellido del NNA:</label>
+            <input type="text" id="apellido_nna" name="primer_apellido">
+            <label for="segundo_apellido">Segundo apellido del NNA:</label>
+            <input type="text" id="apellido_nna" name="segundo_apellido">
+        </div>
+        <div class="form-group">
+            <label for="genero_nna">Género del NNA:</label>
+            <select id="genero_nna" name="genero_nna" required>
+                <option value="femenino">Femenino</option>
+                <option value="masculino">Masculino</option>
+                <option value="otro">Otro</option>
+                <option value="no_declara">Prefiere no declarar</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="fecha_nacimiento">Fecha de Nacimiento del NNA:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+        </div>
+        <div class="form-group">
+            <label for="nacionalidad_nna">Nacionalidad del NNA:</label>
+            <input type="text" id="nacionalidad_nna" name="nacionalidad_nna" required>
+        </div>
+        <p>Dirección</p>
+        <div class="form-group">
+            <label for="calle">Calle:</label>
+            <input type="text" id="calle" name="calle">
+            <label for="manzana">Manzana:</label>
+            <input type="number" id="manzana" name="manzana">
+            <label for="lote">Lote:</label>
+            <input type="number" id="lote" name="lote">
+            <label for="calle">Municipio</label>
+            <input type="text" id="calle" name="calle">
+            <label for="calle">CP:</label>
+            <input type="number" id="calle" name="calle">
+            <label for="calle">Estado:</label>
+            <input type="text" id="calle" name="calle">
+        </div>
+        <div class="form-group">
+            <label for="numero_documento">Número de Documento del NNA:</label>
+            <input type="text" id="numero_documento" name="numero_documento">
+        </div>
+        <div class="form-group">
+            <label for="estado_salud">Estado de Salud Actual:</label>
+            <select id="estado_salud" name="estado_salud" required>
+                <option value="femenino">Grave</option>
+                <option value="masculino">Malo</option>
+                <option value="otro">Bueno</option>
+            </select>
+        </div>
+        <div class="button-group">
+            <a href="Formato2.html"><button type="button">Siguiente</button></a>
+        </div>
+    </form>
+</div>
+<script>
+    document.querySelector('a[href="Formato2.html"]').addEventListener('click', function() {
+        // Guardar los datos del NNA en localStorage
+        localStorage.setItem('nombre_nna', document.getElementById('nombre_nna').value);
+        localStorage.setItem('genero_nna', document.getElementById('genero_nna').value);
+        localStorage.setItem('fecha_nacimiento', document.getElementById('fecha_nacimiento').value);
+        localStorage.setItem('nacionalidad_nna', document.getElementById('nacionalidad_nna').value);
+        localStorage.setItem('direccion_nna', document.getElementById('direccion_nna').value);
+        localStorage.setItem('numero_documento', document.getElementById('numero_documento').value);
+        localStorage.setItem('estado_salud', document.getElementById('estado_salud').value);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Evaluaciones Psicológicas</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: hsl(218, 28%, 13%);
+            color: #333;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2a9d8f;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Contenedor principal */
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        /* Barra lateral */
+        .sidebar {
+            background-color: hsl(219, 30%, 18%);
+            padding: 20px;
+            width: 20%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border: solid 1px #007bb5;
+            border-radius: 10px;
+        }
+
+        .sidebar img.logo {
+            width: 120px; 
+            margin-bottom: 10px;
+        }
+
+        .sidebar h1 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #007bb5;
+        }
+
+        .sidebar nav ul {
+            list-style: none; 
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            background-color: #007bb5; 
+            color: white;
+            border-radius: 10px;
+            text-align: left;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #1a9e8f; 
+            padding-left: 20px; 
+        }
+
+        .sidebar nav ul li a::before {
+            content: '→'; 
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        /* Sección principal */
+        .content {
+            padding: 30px;
+            flex: 1;
+            background-color: hsl(218, 28%, 13%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .form-item {
+            background-color: hsl(218, 28%, 13%);
+            border:solid 1px #007bb5;
+            color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-item h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        /* Estilos para formularios */
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #007bb5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0286c4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Barra lateral -->
+        <div class="sidebar">
+            <img class="logo" src="logo.png" alt="Logo">
+            <h1>Gestión Psicológica</h1>
+            <nav>
+                <ul>
+                    <li><a href="Inicio Psicologia.html">Inicio</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="content">
+            <h2>Gestión de Evaluaciones Psicológicas</h2>
+
+            <div class="form-container">
+                <!-- Formulario de Evaluación Inicial -->
+                <div class="form-item">
+                    <h3>Formulario de Evaluación Inicial</h3>
+                    <form action="#" method="post">
+                        <label for="antecedentes">Antecedentes del NNA:</label>
+                        <textarea id="antecedentes" name="antecedentes" rows="4" placeholder="Describa los antecedentes relevantes..."></textarea>
+
+                        <label for="motivo-consulta">Motivo de la Consulta:</label>
+                        <textarea id="motivo-consulta" name="motivo-consulta" rows="4" placeholder="Ingrese el motivo de la consulta..."></textarea>
+
+                        <label for="observaciones">Observaciones Preliminares:</label>
+                        <textarea id="observaciones" name="observaciones" rows="4" placeholder="Notas sobre observaciones preliminares..."></textarea>
+
+                        <label for="objetivos">Objetivos de la Intervención:</label>
+                        <textarea id="objetivos" name="objetivos" rows="4" placeholder="Establezca los objetivos de la intervención..."></textarea>
+
+                        <button type="submit">Guardar Evaluación Inicial</button>
+                    </form>
+                </div>
+
+                <!-- Formulario de Seguimiento y Evaluaciones Periódicas -->
+                <div class="form-item">
+                    <h3>Seguimiento y Evaluaciones Periódicas</h3>
+                    <form action="#" method="post">
+                        <label for="fecha-sesion">Fecha de la Sesión:</label>
+                        <input type="date" id="fecha-sesion" name="fecha-sesion">
+
+                        <label for="progreso">Evaluación de Progreso:</label>
+                        <textarea id="progreso" name="progreso" rows="4" placeholder="Describa el progreso observado..."></textarea>
+
+                        <label for="comportamientos">Notas sobre Comportamientos Observados:</label>
+                        <textarea id="comportamientos" name="comportamientos" rows="4" placeholder="Detalles sobre comportamientos observados..."></textarea>
+
+                        <label for="cambios">Cambios en la Intervención:</label>
+                        <textarea id="cambios" name="cambios" rows="4" placeholder="Documente cualquier cambio en la intervención..."></textarea>
+
+                        <button type="submit">Guardar Evaluación de Seguimiento</button>
+                    </form>
+                </div>
+
+                <!-- Formulario para Escalas y Cuestionarios -->
+                <div class="form-item">
+                    <h3>Escalas y Cuestionarios</h3>
+                    <form action="#" method="post">
+                        <label for="tipo-escala">Tipo de Escala o Cuestionario:</label>
+                        <select id="tipo-escala" name="tipo-escala">
+                            <option value="ansiedad">Escala de Ansiedad</option>
+                            <option value="depresion">Escala de Depresión</option>
+                            <option value="personalizado">Cuestionario Personalizado</option>
+                            <!-- Añadir más opciones según sea necesario -->
+                        </select>
+
+                        <label for="resultados">Resultados:</label>
+                        <textarea id="resultados" name="resultados" rows="4" placeholder="Ingrese los resultados de la escala o cuestionario..."></textarea>
+
+                        <button type="submit">Guardar Escala o Cuestionario</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

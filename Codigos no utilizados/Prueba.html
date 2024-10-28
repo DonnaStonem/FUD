@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta y Alta de Actores en Derechos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fb;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            color: #2a9d8f;
+        }
+        .form-container {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #1a646d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d85742;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gestión de Actores en Materia de Derechos</h1>
+    
+    <div class="container">
+        <h2>Alta de Actores</h2>
+        <div class="form-container">
+            <form id="altaActorForm">
+                <label for="nombre">Nombre del Actor:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="tipo">Tipo de Actor:</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="gobierno">Gobierno</option>
+                    <option value="ong">ONG</option>
+                    <option value="privado">Sector Privado</option>
+                    <option value="comunidad">Comunidad</option>
+                </select>
+
+                <label for="region">Región:</label>
+                <input type="text" id="region" name="region" required>
+
+                <button type="submit">Dar de Alta</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Consulta de Actores</h2>
+        <div class="form-container">
+            <p>Lista de Actores en Materia de Derechos:</p>
+            <ul id="actorList">
+                <!-- Aquí se mostrarían los actores dados de alta -->
+                <li>Ejemplo Actor 1 (Gobierno) - Región A</li>
+                <li>Ejemplo Actor 2 (ONG) - Región B</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Manejar el evento de envío del formulario
+        document.getElementById('altaActorForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar el envío del formulario
+
+            // Obtener los datos del formulario
+            const nombre = document.getElementById('nombre').value;
+            const tipo = document.getElementById('tipo').value;
+            const region = document.getElementById('region').value;
+
+            // Aquí deberías incluir la lógica para guardar el nuevo actor
+            // Por ejemplo, enviarlo a un servidor mediante AJAX (no incluido aquí)
+
+            // Agregar el nuevo actor a la lista de actores (esto es solo un ejemplo)
+            const actorList = document.getElementById('actorList');
+            const newActorItem = document.createElement('li');
+            newActorItem.textContent = `${nombre} (${tipo}) - ${region}`;
+            actorList.appendChild(newActorItem);
+
+            // Limpiar el formulario
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+

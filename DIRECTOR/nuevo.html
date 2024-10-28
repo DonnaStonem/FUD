@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Nuevo NNA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Registrar Nuevo NNA</h2>
+    <form id="registro-nna-form">
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+
+        <label for="genero">Género:</label>
+        <select id="genero" name="genero" required>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro</option>
+        </select>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required>
+
+        <button type="submit">Registrar NNA</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('registro-nna-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Crear un nuevo objeto de NNA y guardarlo en localStorage (o enviarlo a la base de datos)
+        const nuevoNNA = {
+            nombre: document.getElementById('nombre').value,
+            fecha_nacimiento: document.getElementById('fecha_nacimiento').value,
+            genero: document.getElementById('genero').value,
+            direccion: document.getElementById('direccion').value,
+            telefono: document.getElementById('telefono').value
+        };
+
+        // Guardar el NNA en localStorage (puede reemplazarse con lógica de servidor)
+        let nnaList = JSON.parse(localStorage.getItem('nnaList')) || [];
+        nnaList.push(nuevoNNA);
+        localStorage.setItem('nnaList', JSON.stringify(nnaList));
+
+        alert('NNA registrado con éxito');
+        window.location.href = 'historial_nna.html';
+    });
+</script>
+
+</body>
+</html>

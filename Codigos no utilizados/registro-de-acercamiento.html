@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #9fdcff;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-container {
+            background: #ffffff;
+            padding: 20px;
+            margin: auto;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+            border-radius: 18px;
+        }
+        .form-container h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 7px;
+            border: 1px solid #83bdff;
+            border-radius: 10px;
+        }
+        .form-group button {
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-group select {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="registro 2.php" method="POST">
+        <div class="form-container">
+            <h2>Formulario de Registro</h2>
+            
+            <!-- Información básica -->
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" name="fecha" id="fecha" required>
+            </div>
+            <div class="form-group">
+                <label for="num_reporte">Número de reporte:</label>
+                <input type="number" name="num_reporte" id="num_reporte" required>
+            </div>
+            <div class="form-group">
+                <label for="ciudad">Ciudad, localidad o municipio:</label>
+                <input type="text" name="ciudad" id="ciudad" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre_caso">Nombre del caso:</label>
+                <input type="text" name="nombre_caso" id="nombre_caso" required>
+            </div>
+            <div class="form-group">
+                <label for="miembro_proteccion">Nombre y edad de la NNA:</label>
+                <input type="text" name="miembro_proteccion" id="miembro_proteccion">
+            </div>
+
+            <!-- Información narrativa -->
+            <div class="form-group">
+                <label for="narracion_situacion_nna">Información sobre la situación de la NNA:</label>
+                <textarea name="narracion_situacion_nna" id="narracion_situacion_nna" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="narracion_redes_familiares">Información sobre redes familiares y comunitarias:</label>
+                <textarea name="narracion_redes_familiares" id="narracion_redes_familiares" rows="5"></textarea>
+            </div>
+
+            <!-- Información sobre situación familiar -->
+            <h3>Información adicional sobre la familia:</h3>
+            <div class="form-group">
+                <label for="residencia_familiar">Sistema de residencia familiar patrilocal:</label>
+                <input type="text" name="residencia_familiar" id="residencia_familiar">
+            </div>
+            <div class="form-group">
+                <label for="sosten_economico">Sostén principal en términos económicos:</label>
+                <input type="text" name="sosten_economico" id="sosten_economico">
+            </div>
+            <div class="form-group">
+                <label for="relacion_madre_familia">Relación de la madre de familia con su familia de origen y familia política:</label>
+                <input type="text" name="relacion_madre_familia" id="relacion_madre_familia">
+            </div>
+            <div class="form-group">
+                <label for="patron_migracion">Patrón de migración:</label>
+                <input type="text" name="patron_migracion" id="patron_migracion">
+            </div>
+            <div class="form-group">
+                <label for="sistema_compadrazgo">Sistema de compadrazgo y vínculos interfamiliares:</label>
+                <input type="text" name="sistema_compadrazgo" id="sistema_compadrazgo">
+            </div>
+            <div class="form-group">
+                <label for="espacios_socializacion">Espacios de socialización frecuentados por la familia:</label>
+                <input type="text" name="espacios_socializacion" id="espacios_socializacion">
+            </div>
+            <div class="form-group">
+                <label for="participacion_familiar">Participación de los integrantes de la familia en la vida comunitaria:</label>
+                <input type="text" name="participacion_familiar" id="participacion_familiar">
+            </div>
+            <div class="form-group">
+                <label for="alcoholismo_enfermedades">Alcoholismo u otras enfermedades crónicas en la familia:</label>
+                <input type="text" name="alcoholismo_enfermedades" id="alcoholismo_enfermedades">
+            </div>
+            <div class="form-group">
+                <label for="bilinguisimo_comunidad">Información sobre bilingüismo y participación en la comunidad:</label>
+                <textarea name="bilinguisimo_comunidad" id="bilinguisimo_comunidad" rows="5"></textarea>
+            </div>
+
+            <!-- Información sobre derechos y protección de NNA -->
+            <h3>Información sobre la situación de derechos de la NNA:</h3>
+            <div class="form-group">
+                <label for="registro_civil">¿Registro civil?</label>
+                <select name="registro_civil" id="registro_civil" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="acta_nacimiento">¿Acta de nacimiento?</label>
+                <select name="acta_nacimiento" id="acta_nacimiento" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="hijo_no_vive_familia">¿Hijo(a) no vive con la familia?</label>
+                <select name="hijo_no_vive_familia" id="hijo_no_vive_familia" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="opinion_nna">¿Está considerando la opinión de la NNA?</label>
+                <select name="opinion_nna" id="opinion_nna" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cuidado_principal">¿Cuidado principal?</label>
+                <select name="cuidado_principal" id="cuidado_principal" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="violencia_violencia">¿Violencia en la familia?</label>
+                <select name="violencia_violencia" id="violencia_violencia" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="golpes_insultos">¿Golpes e insultos?</label>
+                <select name="golpes_insultos" id="golpes_insultos" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="alimentacion">¿Adecuada alimentación?</label>
+                <select name="alimentacion" id="alimentacion" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ultima_visita_doctor">¿Última visita al doctor?</label>
+                <select name="ultima_visita_doctor" id="ultima_visita_doctor" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cartilla_vacunacion">¿Cartilla de vacunación?</label>
+                <select name="cartilla_vacunacion" id="cartilla_vacunacion" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cartilla_completa">¿Cartilla completa?</label>
+                <select name="cartilla_completa" id="cartilla_completa" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="enfermedad">¿Enfermedad?</label>
+                <select name="enfermedad" id="enfermedad" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="asistencia_medica">¿Asistencia médica?</label>
+                <select name="asistencia_medica" id="asistencia_medica" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="servicio_medico">¿Servicio médico?</label>
+                <select name="servicio_medico" id="servicio_medico" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="discapacidad">¿Discapacidad?</label>
+                <select name="discapacidad" id="discapacidad" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="aditamentos">¿Aditamentos?</label>
+                <select name="aditamentos" id="aditamentos" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="escuela">¿Escuela?</label>
+                <select name="escuela" id="escuela" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="calificaciones">¿Calificaciones?</label>
+                <select name="calificaciones" id="calificaciones" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="clase_favorita">Clase favorita:</label>
+                <input type="text" name="clase_favorita" id="clase_favorita">
+            </div>
+            <div class="form-group">
+                <label for="clase_dificil">Clase más difícil:</label>
+                <input type="text" name="clase_dificil" id="clase_dificil">
+            </div>
+            <div class="form-group">
+                <label for="hora_dormir">Hora de dormir:</label>
+                <input type="time" name="hora_dormir" id="hora_dormir">
+            </div>
+            <div class="form-group">
+                <label for="hora_levantar">Hora de levantar:</label>
+                <input type="time" name="hora_levantar" id="hora_levantar">
+            </div>
+            <div class="form-group">
+                <label for="hora_jugar">Hora de jugar:</label>
+                <input type="time" name="hora_jugar" id="hora_jugar">
+            </div>
+            <div class="form-group">
+                <label for="jugar">¿Cómo juega?</label>
+                <textarea name="jugar" id="jugar" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="socializar">¿Socializa?</label>
+                <select name="socializar" id="socializar" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="deporte">¿Practica algún deporte?</label>
+                <select name="deporte" id="deporte" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No Aplica">No Aplica</option>
+                </select>
+            </div>
+
+            <!-- Observaciones -->
+            <div class="form-group">
+                <label for="observaciones_negacion">Observaciones sobre la negación:</label>
+                <textarea name="observaciones_negacion" id="observaciones_negacion" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="observaciones_afectacion">Observaciones sobre la afectación:</label>
+                <textarea name="observaciones_afectacion" id="observaciones_afectacion" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="familiograma">Familiograma:</label>
+                <textarea name="familiograma" id="familiograma" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="narracion_general">Narración general:</label>
+                <textarea name="narracion_general" id="narracion_general" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="fecha_plan_restitucion">Fecha del plan de restitución:</label>
+                <input type="date" name="fecha_plan_restitucion" id="fecha_plan_restitucion">
+            </div>
+            <div class="form-group">
+                <label for="nombre_elaborador">Nombre del elaborador:</label>
+                <input type="text" name="nombre_elaborador" id="nombre_elaborador">
+            </div>
+            <div class="form-group">
+                <label for="firmas_elaboradores">Firmas de los elaboradores:</label>
+                <textarea name="firmas_elaboradores" id="firmas_elaboradores" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="otros_datos">Otros datos:</label>
+                <textarea name="otros_datos" id="otros_datos" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Guardar y ir al Inicio </button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

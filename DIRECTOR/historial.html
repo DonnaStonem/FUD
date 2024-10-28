@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de NNA Registrados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #9fdcff;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+            border-radius: 18px;
+        }
+        .nna-list {
+            list-style: none;
+            padding: 0;
+        }
+        .nna-list li {
+            margin: 10px 0;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nna-list button {
+            background-color: #5bc0de;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .nna-list button:hover {
+            background-color: #46b8da;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Niños, Niñas y Adolescentes Registrados</h2>
+    <ul class="nna-list" id="nna-list"></ul>
+</div>
+<button onclick="window.location.href = 'formulario_psicologia.html'">Formulario de Psicología</button>
+<button onclick="window.location.href = 'formulario_fud.html'">Formulario FUD</button>
+
+<script>
+    // Simulación de obtener NNA desde el localStorage (podría venir de una base de datos)
+    const nnaRegistrados = [
+        { id: 1, nombre: 'Juan Pérez' },
+        { id: 2, nombre: 'Ana Gómez' },
+        { id: 3, nombre: 'Carlos Sánchez' }
+    ];
+
+    // Función para cargar la lista de NNA en la página
+    function cargarNNA() {
+        const nnaList = document.getElementById('nna-list');
+        nnaList.innerHTML = ''; // Limpiar la lista antes de cargarla
+
+        nnaRegistrados.forEach(nna => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <span>${nna.nombre}</span>
+                <button onclick="verHistorial(${nna.id})">Ver Historial</button>
+            `;
+            nnaList.appendChild(li);
+        });
+    }
+    
+
+    // Función que redirige a la página de historial de un NNA
+    function verHistorial(id) {
+        // Redirigir a la página de historial de ese NNA
+        window.location.href = `historial_nna.html?nnaId=${id}`;
+    }
+
+    // Cargar los NNA cuando la página se cargue
+    window.onload = cargarNNA;
+</script>
+
+</body>
+</html>

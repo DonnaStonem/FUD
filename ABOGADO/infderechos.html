@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Derechos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hsl(218, 28%, 13%);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px;            
+        }
+        .form-container {
+            background: #ffffff;
+            padding: 50px;
+            margin: auto;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+            border-radius: 18px;
+        }
+        .form-container h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 7px;
+            border: 1px solid #83bdff;
+            border-radius: 10px;
+        }
+        .form-group button {
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <form action="derechos.php" method="POST">
+        <div class="form-container">
+            <h2>Formulario de Derechos</h2>
+
+            <!-- Tipo de Derecho -->
+            <div class="form-group">
+                <label for="tipo_derecho">Tipo de derecho:</label>
+                <select name="tipo_derecho" id="tipo_derecho" required>
+                    <option value="civil">Civil</option>
+                    <option value="politico">Político</option>
+                    <option value="social">Social</option>
+                    <option value="cultural">Cultural</option>
+                    <option value="economico">Económico</option>
+                    <option value="ambiental">Ambiental</option>
+                </select>
+            </div>
+
+            <!-- Derecho Específico -->
+            <div class="form-group">
+                <label for="derecho_especifico">Derecho específico:</label>
+                <input type="text" name="derecho_especifico" id="derecho_especifico" required>
+            </div>
+
+            <!-- Descripción -->
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea name="descripcion" id="descripcion" rows="5" required></textarea>
+            </div>
+
+            <!-- Sustento Legal -->
+            <div class="form-group">
+                <label for="sustento_legal">Sustento legal:</label>
+                <textarea name="sustento_legal" id="sustento_legal" rows="4" required></textarea>
+            </div>
+
+            <!-- Acciones Recomendadas -->
+            <div class="form-group">
+                <label for="acciones_recomendadas">Acciones recomendadas:</label>
+                <textarea name="acciones_recomendadas" id="acciones_recomendadas" rows="4" required></textarea>
+            </div>
+
+            <!-- Indicadores Asociados -->
+            <div class="form-group">
+                <label for="indicadores_asociados">Indicadores asociados:</label>
+                <textarea name="indicadores_asociados" id="indicadores_asociados" rows="3" required></textarea>
+            </div>
+
+            <!-- Botón de Envío -->
+            <div class="form-group">
+                <button type="submit">Guardar y enviar</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

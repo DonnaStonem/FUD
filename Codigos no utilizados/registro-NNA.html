@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #9fdcff;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-container {
+            background: #ffffff;
+            padding: 20px;
+            margin: auto;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+            border-radius: 18px;
+        }
+        .form-container h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 7px;
+            border: 1px solid #83bdff;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        .form-group button {
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .form-group button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form action="registro3.php" method="POST">
+        <div class="form-container">
+            <h2>Formato para el registro de información del acercamiento con la NNA</h2>
+            <p>La información mínima a registrar en el formato de entrevista con la niña, niño o adolescente es:</p>
+            
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" name="fecha" id="fecha" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="num_reporte">Nº de reporte:</label>
+                <input type="number" name="num_reporte" id="num_reporte" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="ciudad">Ciudad, localidad o municipio:</label>
+                <input type="text" name="ciudad" id="ciudad" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre_caso">Nombre del caso:</label>
+                <input type="text" name="nombre_caso" id="nombre_caso" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="miembro_proteccion">Miembro de protección de la NNA:</label>
+                <input type="text" name="miembro_proteccion" id="miembro_proteccion">
+            </div>
+            
+            <div class="form-group">
+                <label for="narracion">¿Cómo le gusta que le llamen?:</label>
+                <textarea name="narracion" id="narracion" rows="5"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="registro_dibujo">Registro textual de lo que hace o dice al proponerle dibujar a su familia o a sí mismo:</label>
+                <textarea name="registro_dibujo" id="registro_dibujo" rows="4"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="registro_molestia">Registro textual de lo que dijo al preguntarle si hay algo que le molesta o lastima:</label>
+                <textarea name="registro_molestia" id="registro_molestia" rows="4"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="temores">¿A quién dice (o muestra) temer?</label>
+                <input type="text" name="temores" id="temores">
+            </div>
+            
+            <div class="form-group">
+                <label for="adulto_significativo">¿Qué adulto le resulta significativo y quiere tener cerca de sí?</label>
+                <textarea name="adulto_significativo" id="adulto_significativo" rows="4"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit">Guardar y volver al inicio</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

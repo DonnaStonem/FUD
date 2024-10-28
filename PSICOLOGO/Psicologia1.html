@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('kids3.jpg'); /* Reemplaza con la URL de tu imagen */
+            background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 200px; /* Ajusta este valor para mover la imagen hacia abajo */
+        }
+        .recuadro {
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            color: #fff;
+            background-color: hsl(219, 30%, 18%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .recuadro h1 {
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: #fff;
+        }
+        .recuadro ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .recuadro ul li {
+            margin: 10px 0;
+        }
+        .recuadro button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #0056b3;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .recuadro button:hover {
+            background-color: #007bff;
+        }
+        .general-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Recuadro con el nombre del NNA y botones -->
+        <div class="recuadro">
+            <h1>Seguimiento</h1>
+            <ul>
+                <li><button onclick="window.location.href='Página de Registro de Caso Psicologia.html';">Historial</button></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+

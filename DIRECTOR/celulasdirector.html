@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Células de Trabajo</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2a9d8f;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            background-color: #1a646ddf;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #d85742;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 20%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar img.logo {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar h1 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #2a9d8f;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            background-color: #1a646d;
+            color: white;
+            border-radius: 5px;
+            text-align: left;
+            transition: background-color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #1a9e8f;
+            padding-left: 20px;
+        }
+
+        .sidebar nav ul li a::before {
+            content: '→';
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        .content {
+            padding: 30px;
+            flex: 1;
+            background-color: #f1faee;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero {
+            background-color: #a2dbd5;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+        }
+
+        .about {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .about h3 {
+            margin-bottom: 15px;
+        }
+
+        /* Estilos para la tabla de cédulas de trabajo */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1faee;
+        }
+
+        /* Estilos para el recuadro de información adicional */
+        .recuadro {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-left: 5px solid #2a9d8f;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+
+        .titulo {
+            font-weight: bold;
+            color: #93a7af;
+        }
+
+        .profile-picture {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            width: 70px;
+            height: 70px;
+            border-radius: 70%;
+            border: 6px solid #2a9d8f;
+        }
+        .role-table {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1faee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="logo.png" alt="Logo de La FUD" class="logo">
+            <h1>Formato de Registro de Datos</h1>
+            <nav>
+                <ul>
+                    <li><a href="inicioDirector.html">Inicio</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section class="hero">
+                <h2>Células de Trabajo</h2>
+                <p>Consulta la información de todas las células de trabajo.</p>
+            </section>
+
+            <!-- Tabla para Psicólogos -->
+            <section class="role-table">
+                <h3>Psicólogos</h3>
+                <table>
+                    <tr>
+                        <th>Nombre del Trabajador</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>CURP</th>
+                        <th>RFC</th>
+                        <th>Grado de estudios</th>
+                        <th>Cédula Profesional</th>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>Pedro</td>
+                        <td>Rodriguez</td>
+                        <td>de la Vega</td>
+                        <td>REVE120345HRMLA0</td>
+                        <td>REVE1203345</td>
+                        <td>Licenciatura</td></ld>
+                        <td>123456</td>
+                    </tr>
+                    <!-- Agrega más filas según sea necesario -->
+                </table>
+            </section>
+
+            <!-- Tabla para Abogados -->
+            <section class="role-table">
+                <h3>Abogados</h3>
+                <table>
+                    <tr>
+                        <th>Nombre del Trabajador</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>CURP</th>
+                        <th>RFC</th>
+                        <th>Grado de estudios</th>
+                        <th>Cédula Profesional</th>
+                    </tr>
+                    <tr>
+                        <td>Patricio</td>
+                        <td>O´ward</td>
+                        <td>Junco</td>
+                        <td>OWJU090799HRMLA0</td>
+                        <td>OWJU090799</td>
+                        <td>Licenciatura</td>
+                        <td>789012</td>
+                    </tr>
+                    <!-- Agrega más filas según sea necesario -->
+                </table>
+            </section>
+
+            <!-- Tabla para Trabajadores Sociales -->
+            <section class="role-table">
+                <h3>Trabajadores Sociales</h3>
+                <table>
+                    <tr>
+                        <th>Nombre del Trabajador</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>CURP</th>
+                        <th>RFC</th>
+                        <th>Grado de estudios</th>
+                        <th>Cédula Profesional</th>
+                    </tr>
+                    <tr>
+                        <td>Diana</td>
+                        <td>Castro</td>
+                        <td>Mendez</td>
+                        <td>CAME120589HRMLA0</td>
+                        <td>CAME120589</td>
+                        <td>Licenciatura</td>
+                        <td>345678</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- Tabla para Médicos -->
+            <section class="role-table">
+                <h3>Médicos</h3>
+                <table>
+                    <tr>
+                        <th>Nombre del Trabajador</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>CURP</th>
+                        <th>RFC</th>
+                        <th>Grado de estudios</th>
+                        <th>Cédula Profesional</th>
+                    </tr>
+                    <tr>
+                        <td>Carlos</td>
+                        <td>Saiz</td>
+                        <td>Vazquez</td>
+                        <td>SAVA12089HRMLA0</td>
+                        <td>SAVA12089</td>
+                        <td>Licenciatura</td>
+                        <td>901234</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- Tabla para Capital Humano -->
+            <section class="role-table">
+                <h3>Capital Humano</h3>
+                <table>
+                    <tr>
+                        <th>Nombre del Trabajador</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>CURP</th>
+                        <th>RFC</th>
+                        <th>Grado de estudios</th>
+                        <th>Cédula Profesional</th>
+                    </tr>
+                    <tr>
+                        <td>Fernando</td>
+                        <td>Alonso</td>
+                        <td>Diaz</td>
+                        <td>ALDI120778HRMLA0</td>
+                        <td>ALDI120778</td>
+                        <td>Licenciatura</td>
+                        <td>567890</td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
