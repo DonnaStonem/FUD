@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +15,10 @@
             margin: 0;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: 'Montserrat', sans-serif;
             color: #2a9d8f;
         }
@@ -45,7 +49,7 @@
         }
 
         .sidebar img.logo {
-            width: 120px; 
+            width: 120px;
             margin-bottom: 10px;
         }
 
@@ -56,7 +60,7 @@
         }
 
         .sidebar nav ul {
-            list-style: none; 
+            list-style: none;
             padding: 0;
             margin: 0;
             width: 100%;
@@ -69,7 +73,7 @@
         .sidebar nav ul li a {
             display: block;
             padding: 10px 15px;
-            background-color: #007bb5; 
+            background-color: #007bb5;
             color: white;
             border-radius: 5px;
             text-decoration: none;
@@ -78,12 +82,12 @@
         }
 
         .sidebar nav ul li a:hover {
-            background-color: #1a9e8f; 
-            padding-left: 20px; 
+            background-color: #1a9e8f;
+            padding-left: 20px;
         }
 
         .sidebar nav ul li a::before {
-            content: '→'; 
+            content: '→';
             display: inline-block;
             margin-right: 8px;
         }
@@ -92,7 +96,7 @@
         .content {
             padding: 30px;
             flex: 1;
-            background-color:  hsl(218, 28%, 13%);
+            background-color: hsl(218, 28%, 13%);
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -117,7 +121,9 @@
             font-weight: bold;
         }
 
-        .formulario input, .formulario textarea, .formulario select {
+        .formulario input,
+        .formulario textarea,
+        .formulario select {
             width: 100%;
             padding: 8px;
             margin-top: 5px;
@@ -141,6 +147,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <!-- Barra lateral -->
@@ -166,51 +173,39 @@
                     <input type="number" id="duracion" name="duracion" min="1" placeholder="Ej. 60">
 
                     <label for="temas-tratados">Temas Tratados:</label>
-                    <textarea id="temas-tratados" name="temas-tratados" rows="4" placeholder="Describa los temas tratados durante la sesión..."></textarea>
+                    <textarea id="temas-tratados" name="temas-tratados" rows="4"
+                        placeholder="Describa los temas tratados durante la sesión..."></textarea>
 
                     <label for="intervenciones">Intervenciones Realizadas:</label>
-                    <textarea id="intervenciones" name="intervenciones" rows="4" placeholder="Detalle cualquier intervención realizada..."></textarea>
+                    <textarea id="intervenciones" name="intervenciones" rows="4"
+                        placeholder="Detalle cualquier intervención realizada..."></textarea>
 
+                    <label for="intervenciones">Cartilla de vacunación:</label>
+                    <textarea id="intervenciones" name="intervenciones" rows="4"
+                        placeholder="Detalle cualquier intervención realizada..."></textarea>
+
+                    <label for="Peso">Peso:</label>
+                    <input type="Peso" id="Peso" name="Peso">
+
+                    <label for="Estatura">Estatura:</label>
+                    <input type="Estatura" id="Estatura" name="Estatura">
+
+                    <label for="Edad">Edad:</label>
+                    <input type="number" id="Edad" name="Edad">
+
+                    <label for="Presión">Presión:</label>
+                    <input type="number" id="Presión" name="Presión">
+
+                    <label for="Alergias">Alergias:</label>
+                    <input type="text" id="Alergias" name="Alergias">
+
+                    <label for="Diagnóstico">Diagnóstico:</label>
+                    <textarea id="Diagnóstico" name="Diagnóstico" rows="4"></textarea>
                     <button type="submit">Guardar Sesión</button>
-                </form>
-            </div>
-
-            <div class="formulario">
-                <h2>Plan de Intervención</h2>
-                <form action="#" method="post">
-                    <label for="objetivos-corto-plazo">Objetivos a Corto Plazo:</label>
-                    <textarea id="objetivos-corto-plazo" name="objetivos-corto-plazo" rows="4" placeholder="Describa los objetivos a corto plazo..."></textarea>
-
-                    <label for="objetivos-largo-plazo">Objetivos a Largo Plazo:</label>
-                    <textarea id="objetivos-largo-plazo" name="objetivos-largo-plazo" rows="4" placeholder="Describa los objetivos a largo plazo..."></textarea>
-
-                    <label for="estrategias-terapeuticas">Estrategias Terapéuticas:</label>
-                    <textarea id="estrategias-terapeuticas" name="estrategias-terapeuticas" rows="4" placeholder="Detalle las estrategias terapéuticas planificadas..."></textarea>
-
-                    <label for="recomendaciones">Recomendaciones:</label>
-                    <textarea id="recomendaciones" name="recomendaciones" rows="4" placeholder="Añada cualquier recomendación adicional..."></textarea>
-
-                    <button type="submit">Guardar Plan de Intervención</button>
-                </form>
-            </div>
-
-            <div class="formulario">
-                <h2>Documentación de Crisis</h2>
-                <form action="#" method="post">
-                    <label for="fecha-crisis">Fecha del Incidente:</label>
-                    <input type="date" id="fecha-crisis" name="fecha-crisis">
-
-                    <label for="detalles-incidente">Detalles del Incidente:</label>
-                    <textarea id="detalles-incidente" name="detalles-incidente" rows="4" placeholder="Describa los detalles del incidente de crisis..."></textarea>
-
-                    <label for="acciones-tomadas">Acciones Tomadas:</label>
-                    <textarea id="acciones-tomadas" name="acciones-tomadas" rows="4" placeholder="Documente las acciones tomadas durante la crisis..."></textarea>
-
-                    <button type="submit">Guardar Documentación de Crisis</button>
                 </form>
             </div>
         </div>
     </div>
 </body>
-</html>
 
+</html>
